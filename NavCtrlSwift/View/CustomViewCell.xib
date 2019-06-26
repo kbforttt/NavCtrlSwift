@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomViewCell" customModule="NavCtrlSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="456" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FFt-qa-guP">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="FFt-qa-guP" secondAttribute="height" multiplier="1:1" id="obu-mO-7Rg"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHZ-3x-zBN">
+                    <rect key="frame" x="110" y="5" width="336" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="fyL-fb-sFW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0l-T4-nfJ">
+                    <rect key="frame" x="110" y="70" width="336" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="5TO-Cj-T5c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="FFt-qa-guP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="4ta-FP-d6s"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="o0l-T4-nfJ" secondAttribute="trailing" constant="10" id="88I-N7-7Dg"/>
+                <constraint firstItem="FFt-qa-guP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="JhN-t5-GLd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yHZ-3x-zBN" secondAttribute="trailing" constant="10" id="K91-Y5-VGW"/>
+                <constraint firstItem="yHZ-3x-zBN" firstAttribute="leading" secondItem="FFt-qa-guP" secondAttribute="trailing" constant="10" id="PZZ-KN-xXr"/>
+                <constraint firstItem="FFt-qa-guP" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="USB-wJ-j94"/>
+                <constraint firstItem="o0l-T4-nfJ" firstAttribute="leading" secondItem="FFt-qa-guP" secondAttribute="trailing" constant="10" id="gYP-sj-LZ2"/>
+                <constraint firstItem="yHZ-3x-zBN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="gsI-Z0-KpF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="o0l-T4-nfJ" secondAttribute="bottom" constant="5" id="iBc-Ve-OaN"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="imgViewLogo" destination="FFt-qa-guP" id="CHX-cU-mdI"/>
+                <outlet property="lblDetail" destination="o0l-T4-nfJ" id="ZKA-9T-xa3"/>
+                <outlet property="lblHeading" destination="yHZ-3x-zBN" id="dfd-OM-EUG"/>
+            </connections>
+            <point key="canvasLocation" x="112" y="-179.91004497751126"/>
+        </view>
+    </objects>
+</document>
