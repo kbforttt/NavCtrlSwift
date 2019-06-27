@@ -3,17 +3,19 @@
     <entity name="Company" representedClassName="CompanyMO" syncable="YES" codeGenerationType="class">
         <attribute name="logourl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="ticker" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="company" inverseEntity="Product" syncable="YES"/>
     </entity>
     <entity name="Product" representedClassName="ProductMO" syncable="YES" codeGenerationType="class">
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="productUrl" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" inverseName="products" inverseEntity="Company" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Company" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Product" positionX="-63" positionY="9" width="128" height="105"/>
+        <element name="Company" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Product" positionX="-63" positionY="9" width="128" height="120"/>
     </elements>
 </model>

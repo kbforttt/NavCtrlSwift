@@ -15,8 +15,8 @@
 		AA1B23A722BC650F00EC333B /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B23A622BC650F00EC333B /* DAO.swift */; };
 		AA22861C22C148980029B06D /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22861B22C148980029B06D /* ImageViewExtension.swift */; };
 		AA22861E22C14CF80029B06D /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = AA22861D22C14CF80029B06D /* placeholder.png */; };
-		AA22862022C184C00029B06D /* CompanyAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22861F22C184C00029B06D /* CompanyAddViewController.swift */; };
-		AA22862222C185390029B06D /* CompanyAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22862122C185390029B06D /* CompanyAddViewController.xib */; };
+		AA22862022C184C00029B06D /* CompanyAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22861F22C184C00029B06D /* CompanyAddEditViewController.swift */; };
+		AA22862222C185390029B06D /* CompanyAddEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22862122C185390029B06D /* CompanyAddEditViewController.xib */; };
 		AA66305D22BD8BB500D2888A /* CompanyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA66305C22BD8BB500D2888A /* CompanyListViewController.xib */; };
 		AA76B63D22C2C9CA00FEA6F2 /* CustomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA76B63C22C2C9CA00FEA6F2 /* CustomViewCell.xib */; };
 		AA76B63F22C2CC8300FEA6F2 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76B63E22C2CC8300FEA6F2 /* CustomViewCell.swift */; };
@@ -34,8 +34,8 @@
 		AA1B23A622BC650F00EC333B /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		AA22861B22C148980029B06D /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		AA22861D22C14CF80029B06D /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
-		AA22861F22C184C00029B06D /* CompanyAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAddViewController.swift; sourceTree = "<group>"; };
-		AA22862122C185390029B06D /* CompanyAddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyAddViewController.xib; sourceTree = "<group>"; };
+		AA22861F22C184C00029B06D /* CompanyAddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAddEditViewController.swift; sourceTree = "<group>"; };
+		AA22862122C185390029B06D /* CompanyAddEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyAddEditViewController.xib; sourceTree = "<group>"; };
 		AA66305C22BD8BB500D2888A /* CompanyListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyListViewController.xib; sourceTree = "<group>"; };
 		AA76B63C22C2C9CA00FEA6F2 /* CustomViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewCell.xib; sourceTree = "<group>"; };
 		AA76B63E22C2CC8300FEA6F2 /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
@@ -108,8 +108,8 @@
 			children = (
 				AA1B239222BC64CF00EC333B /* CompanyListViewController.swift */,
 				AA66305C22BD8BB500D2888A /* CompanyListViewController.xib */,
-				AA22861F22C184C00029B06D /* CompanyAddViewController.swift */,
-				AA22862122C185390029B06D /* CompanyAddViewController.xib */,
+				AA22861F22C184C00029B06D /* CompanyAddEditViewController.swift */,
+				AA22862122C185390029B06D /* CompanyAddEditViewController.xib */,
 			);
 			path = Company;
 			sourceTree = "<group>";
@@ -201,7 +201,7 @@
 				AA76B63D22C2C9CA00FEA6F2 /* CustomViewCell.xib in Resources */,
 				AA22861E22C14CF80029B06D /* placeholder.png in Resources */,
 				AA1B239E22BC64D100EC333B /* LaunchScreen.storyboard in Resources */,
-				AA22862222C185390029B06D /* CompanyAddViewController.xib in Resources */,
+				AA22862222C185390029B06D /* CompanyAddEditViewController.xib in Resources */,
 				AA1B239B22BC64D100EC333B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,7 +219,7 @@
 				AA1B239322BC64CF00EC333B /* CompanyListViewController.swift in Sources */,
 				AA22861C22C148980029B06D /* ImageViewExtension.swift in Sources */,
 				AA76B63F22C2CC8300FEA6F2 /* CustomViewCell.swift in Sources */,
-				AA22862022C184C00029B06D /* CompanyAddViewController.swift in Sources */,
+				AA22862022C184C00029B06D /* CompanyAddEditViewController.swift in Sources */,
 				AA1B239122BC64CF00EC333B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompanyAddViewController" customModule="NavCtrlSwift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompanyAddEditViewController" customModule="NavCtrlSwift" customModuleProvider="target">
             <connections>
                 <outlet property="txtCompanyName" destination="D3Z-Ar-gda" id="ZHm-gl-OTz"/>
                 <outlet property="txtImageUrl" destination="rKl-DS-2ih" id="pB0-hp-XR1"/>

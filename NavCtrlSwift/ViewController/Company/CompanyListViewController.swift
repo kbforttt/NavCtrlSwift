@@ -38,10 +38,11 @@ class CompanyListViewController: UIViewController {
 
 
     @objc func openAdd() {
-        let companyAddViewController = CompanyAddViewController()
-        self.navigationController?.pushViewController(companyAddViewController, animated: true)
+        let companyAddEditViewController = CompanyAddEditViewController()
+        self.navigationController?.pushViewController(companyAddEditViewController, animated: true)
     }
     
+   
     @IBAction func addClicked(_ sender: Any) {
         openAdd()
     }
@@ -86,16 +87,18 @@ extension CompanyListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        let company = dao.getCompanies()[indexPath.row]
-        
-        if editingStyle == .delete {
-            dao.deleteCompany(company: company)
+         if editingStyle == .delete {
+            dao.deleteCompany(index: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
-    }
+     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("aaaa")
+        if(isEditing){
+            let companyAddEditViewController = CompanyAddEditViewController()
+            companyAddEditViewController.companyIndex = indexPath.row
+            self.navigationController?.pushViewController(companyAddEditViewController, animated: true)
+        }
     }
     
     
