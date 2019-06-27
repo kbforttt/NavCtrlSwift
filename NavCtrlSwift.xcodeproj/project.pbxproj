@@ -123,10 +123,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AA93E9AB22C3F12600DDCBCB /* Product */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
 		AAE3045222BD59A600895A7D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				AA66305B22BD87CA00D2888A /* Company */,
+				AA93E9AB22C3F12600DDCBCB /* Product */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";

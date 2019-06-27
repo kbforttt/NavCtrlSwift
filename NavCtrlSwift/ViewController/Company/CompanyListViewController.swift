@@ -10,6 +10,9 @@ import UIKit
 
 class CompanyListViewController: UIViewController {
     
+    
+    @IBOutlet var emptyListView: UIView!
+    
     let reuseIdentifier = "CustomViewCell"
 
     @IBOutlet weak var tableView: UITableView!
@@ -39,7 +42,10 @@ class CompanyListViewController: UIViewController {
         self.navigationController?.pushViewController(companyAddViewController, animated: true)
     }
     
-   
+    @IBAction func addClicked(_ sender: Any) {
+        openAdd()
+    }
+    
     
 }
 
@@ -48,6 +54,14 @@ class CompanyListViewController: UIViewController {
 extension CompanyListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if dao.getCompanies().count==0 {
+            self.view.addSubview(emptyListView)
+        }
+        else {
+           emptyListView.removeFromSuperview()
+        }
+        
         return dao.getCompanies().count
     }
     
@@ -57,8 +71,8 @@ extension CompanyListViewController: UITableViewDelegate, UITableViewDataSource 
      
         let company = dao.getCompanies()[indexPath.row]
         
-        cell.lblHeading.text = company.name
-        cell.lblDetail.text = company.ticker
+        cell.lblHeading.text = "\(company.name ?? "") (\(company.ticker ?? ""))"
+        cell.lblDetail.text = "$0.00"
         cell.imgViewLogo.load(urlString: company.logourl)
         
         return cell
@@ -71,8 +85,11 @@ extension CompanyListViewController: UITableViewDelegate, UITableViewDataSource 
      
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let company = dao.getCompanies()[indexPath.row]
+        
         if editingStyle == .delete {
-            dao.deleteCompany(index: indexPath.row)
+            dao.deleteCompany(company: company)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -80,6 +97,8 @@ extension CompanyListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("aaaa")
     }
+    
+    
     
     
 }

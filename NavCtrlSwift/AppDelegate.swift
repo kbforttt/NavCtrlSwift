@@ -20,13 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootController = CompanyListViewController()
         
         let navigationController = UINavigationController(rootViewController: rootController)
-        navigationController.navigationBar.barTintColor = UIColor(red:0.39, green:0.78, blue:0.39, alpha:1.0)
+        navigationController.navigationBar.barTintColor = UIColor(red:128.0/255, green:178.0/255, blue:66.0/255, alpha:1.0)
         navigationController.navigationBar.tintColor = .white
         navigationController.navigationBar.backgroundColor = .green
         let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController.navigationBar.titleTextAttributes = textAttributes
         
-         window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
