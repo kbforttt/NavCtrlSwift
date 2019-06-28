@@ -27,6 +27,7 @@ class CompanyAddEditViewController: UIViewController {
         } else {
             title = "Edit Company"
             let company = dao.getCompanies()[companyIndex]
+            
             txtCompanyName.text = company.name
             txtTicker.text = company.ticker
             txtImageUrl.text = company.logourl

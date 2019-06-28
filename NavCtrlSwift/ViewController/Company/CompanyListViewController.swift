@@ -29,11 +29,18 @@ class CompanyListViewController: UIViewController {
         
         let nib = UINib.init(nibName: reuseIdentifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: reuseIdentifier)
-    }
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(refreshControl) , for: .valueChanged)
+        
+      }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         tableView.reloadData()
+        loadStocks(loadAll:false)
+        
     }
 
 
@@ -42,10 +49,45 @@ class CompanyListViewController: UIViewController {
         self.navigationController?.pushViewController(companyAddEditViewController, animated: true)
     }
     
+    @objc func refreshControl() {
+        loadStocks(loadAll: true)
+        tableView.refreshControl?.endRefreshing()
+    }
+    
    
     @IBAction func addClicked(_ sender: Any) {
         openAdd()
     }
+    
+    func loadStocks(loadAll: Bool) {
+        
+        var tickers = [String]()
+        
+        // request stocks only for which price was not updated
+        for company in dao.getCompanies() {
+            if loadAll || company.price == 0  {
+                if let ticker = company.ticker {
+                    tickers.append(ticker)
+                }
+            }
+        }
+        
+        
+        StockService.getStockPrices(tickers: tickers) {ticker,price in
+            
+            for (index, company) in self.dao.getCompanies().enumerated() {
+                if company.ticker == ticker {
+                    company.price = price
+                    DispatchQueue.main.async {
+                        
+                       self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.fade)
+                    }
+                }
+            }
+        }
+        
+    }
+   
     
     
 }
@@ -61,7 +103,7 @@ extension CompanyListViewController: UITableViewDelegate, UITableViewDataSource 
         }
         else {
            emptyListView.removeFromSuperview()
-        }
+          }
         
         return dao.getCompanies().count
     }
@@ -73,7 +115,7 @@ extension CompanyListViewController: UITableViewDelegate, UITableViewDataSource 
         let company = dao.getCompanies()[indexPath.row]
         
         cell.lblHeading.text = "\(company.name ?? "") (\(company.ticker ?? ""))"
-        cell.lblDetail.text = "$0.00"
+        cell.lblDetail.text = "$\(company.price)"
         cell.imgViewLogo.load(urlString: company.logourl)
         
         return cell

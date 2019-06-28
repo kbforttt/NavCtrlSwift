@@ -12,10 +12,11 @@ import CoreData
 
 class DAOCoreData: NSObject, DAO {
     
+    
     static let share = DAOCoreData()
     
-    var selectedCompany : CompanyMO?
     var companies = [CompanyMO]()
+  
     var managedContext : NSManagedObjectContext?
     
     private override init() {
@@ -26,6 +27,8 @@ class DAOCoreData: NSObject, DAO {
         }
         
     }
+    
+    // MARK: - Company Methods
     
     func getCompanies()->[CompanyMO] {
         return companies;
@@ -53,12 +56,9 @@ class DAOCoreData: NSObject, DAO {
     
     func addCompany(name: String, ticker: String, imageUrl: String) {
         
-        // Retrieve all data from Core Data
         guard let context = managedContext else {
             return
         }
-        
-        
         
         let newCompany = CompanyMO(context: context)
         
@@ -72,11 +72,12 @@ class DAOCoreData: NSObject, DAO {
     }
     
     func editCompany(index: Int, name: String, ticker: String, imageUrl: String) {
+        
         let company = companies[index]
         company.name = name
         company.ticker = ticker
         company.logourl = imageUrl
-        
+        company.price = 0
         readCompanies()
     }
     
@@ -89,6 +90,26 @@ class DAOCoreData: NSObject, DAO {
         
         readCompanies()
     }
+    
+    
+    // MARK: - Product Methods
+    
+    func addProduct(companyIndex: Int, name: String, ticker: String, imageUrl: String) {
+        
+    }
+    
+    func editProduct(companyIndex: Int, index: Int, name: String, ticker: String, imageUrl: String) {
+        
+    }
+    
+    func deleteProduct(companyIndex: Int, index: Int) {
+        
+    }
+    
+    func getProducts(companyIndex: Int) -> [ProductMO] {
+        return (companies[companyIndex].products as! Set<ProductMO>).sorted(by:  { $0.order < $1.order })
+    }
+
     
     
 }
