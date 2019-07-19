@@ -11,7 +11,7 @@ import UIKit
 class CompanyListViewController: UIViewController {
     
     
-    @IBOutlet var emptyListView: UIView!
+    @IBOutlet var emptyView: UIView!
     
     let reuseIdentifier = "CustomViewCell"
 
@@ -99,10 +99,10 @@ extension CompanyListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if dao.getCompanies().count==0 {
-            self.view.addSubview(emptyListView)
+            self.view.addSubview(emptyView)
         }
         else {
-           emptyListView.removeFromSuperview()
+           emptyView.removeFromSuperview()
           }
         
         return dao.getCompanies().count
@@ -136,10 +136,17 @@ extension CompanyListViewController: UITableViewDelegate, UITableViewDataSource 
      }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
         if(isEditing){
             let companyAddEditViewController = CompanyAddEditViewController()
             companyAddEditViewController.companyIndex = indexPath.row
             self.navigationController?.pushViewController(companyAddEditViewController, animated: true)
+        }
+        else {
+            let productListViewController = ProductListViewController()
+            productListViewController.companyIndex = indexPath.row
+            self.navigationController?.pushViewController(productListViewController, animated: true)
         }
     }
     

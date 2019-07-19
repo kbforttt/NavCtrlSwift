@@ -12,7 +12,7 @@ import Foundation
 
 class StockService {
     
-    static let API_KEY = "API-KEY"
+    static let API_KEY = "RvF_6czQmQe-e9TVqwQfg-ooXTs9ItBM"
     
     class func getStockPrices(tickers: [String], closure:@escaping (String, Double) -> Void) {
         
