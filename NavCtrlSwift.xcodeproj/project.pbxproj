@@ -20,6 +20,9 @@
 		AA66305D22BD8BB500D2888A /* CompanyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA66305C22BD8BB500D2888A /* CompanyListViewController.xib */; };
 		AA76B63D22C2C9CA00FEA6F2 /* CustomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA76B63C22C2C9CA00FEA6F2 /* CustomViewCell.xib */; };
 		AA76B63F22C2CC8300FEA6F2 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76B63E22C2CC8300FEA6F2 /* CustomViewCell.swift */; };
+		AA8CF96E22EA07FB0031C237 /* ProductAddEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA8CF96D22EA07FB0031C237 /* ProductAddEditViewController.xib */; };
+		AA8CF97022EA663F0031C237 /* ProductWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CF96F22EA663F0031C237 /* ProductWebViewController.swift */; };
+		AAACF95D22E919B70037AE7B /* ProductAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAACF95C22E919B70037AE7B /* ProductAddEditViewController.swift */; };
 		AAC07A0D22C525D700B7DB36 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC07A0C22C525D700B7DB36 /* ProductListViewController.swift */; };
 		AAC07A0F22C5260100B7DB36 /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC07A0E22C5260100B7DB36 /* ProductListViewController.xib */; };
 		AAC07A1222C52EF000B7DB36 /* StockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC07A1122C52EF000B7DB36 /* StockService.swift */; };
@@ -42,6 +45,9 @@
 		AA66305C22BD8BB500D2888A /* CompanyListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyListViewController.xib; sourceTree = "<group>"; };
 		AA76B63C22C2C9CA00FEA6F2 /* CustomViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewCell.xib; sourceTree = "<group>"; };
 		AA76B63E22C2CC8300FEA6F2 /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
+		AA8CF96D22EA07FB0031C237 /* ProductAddEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductAddEditViewController.xib; sourceTree = "<group>"; };
+		AA8CF96F22EA663F0031C237 /* ProductWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductWebViewController.swift; sourceTree = "<group>"; };
+		AAACF95C22E919B70037AE7B /* ProductAddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAddEditViewController.swift; sourceTree = "<group>"; };
 		AAC07A0C22C525D700B7DB36 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		AAC07A0E22C5260100B7DB36 /* ProductListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListViewController.xib; sourceTree = "<group>"; };
 		AAC07A1122C52EF000B7DB36 /* StockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockService.swift; sourceTree = "<group>"; };
@@ -135,6 +141,9 @@
 			children = (
 				AAC07A0C22C525D700B7DB36 /* ProductListViewController.swift */,
 				AAC07A0E22C5260100B7DB36 /* ProductListViewController.xib */,
+				AAACF95C22E919B70037AE7B /* ProductAddEditViewController.swift */,
+				AA8CF96D22EA07FB0031C237 /* ProductAddEditViewController.xib */,
+				AA8CF96F22EA663F0031C237 /* ProductWebViewController.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -214,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA8CF96E22EA07FB0031C237 /* ProductAddEditViewController.xib in Resources */,
 				AA66305D22BD8BB500D2888A /* CompanyListViewController.xib in Resources */,
 				AA76B63D22C2C9CA00FEA6F2 /* CustomViewCell.xib in Resources */,
 				AA22861E22C14CF80029B06D /* placeholder.png in Resources */,
@@ -234,11 +244,13 @@
 				AA1B239922BC64CF00EC333B /* NavCtrlSwift.xcdatamodeld in Sources */,
 				AAC07A0D22C525D700B7DB36 /* ProductListViewController.swift in Sources */,
 				AAE3045122BD4B7D00895A7D /* DAOCoreData.swift in Sources */,
+				AA8CF97022EA663F0031C237 /* ProductWebViewController.swift in Sources */,
 				AA1B23A722BC650F00EC333B /* DAO.swift in Sources */,
 				AAC07A1222C52EF000B7DB36 /* StockService.swift in Sources */,
 				AA1B239322BC64CF00EC333B /* CompanyListViewController.swift in Sources */,
 				AA22861C22C148980029B06D /* ImageViewExtension.swift in Sources */,
 				AA76B63F22C2CC8300FEA6F2 /* CustomViewCell.swift in Sources */,
+				AAACF95D22E919B70037AE7B /* ProductAddEditViewController.swift in Sources */,
 				AA22862022C184C00029B06D /* CompanyAddEditViewController.swift in Sources */,
 				AA1B239122BC64CF00EC333B /* AppDelegate.swift in Sources */,
 			);

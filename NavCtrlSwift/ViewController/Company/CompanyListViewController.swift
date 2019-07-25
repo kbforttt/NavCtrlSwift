@@ -79,7 +79,6 @@ class CompanyListViewController: UIViewController {
                 if company.ticker == ticker {
                     company.price = price
                     DispatchQueue.main.async {
-                        
                        self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.fade)
                     }
                 }
@@ -103,7 +102,7 @@ extension CompanyListViewController: UITableViewDelegate, UITableViewDataSource 
         }
         else {
            emptyView.removeFromSuperview()
-          }
+        }
         
         return dao.getCompanies().count
     }

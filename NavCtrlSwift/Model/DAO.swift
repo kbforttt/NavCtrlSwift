@@ -15,8 +15,8 @@ protocol DAO {
     func getCompanies()-> [CompanyMO]
 
     // product methods
-    func addProduct(companyIndex: Int, name: String, ticker: String, imageUrl: String)
-    func editProduct(companyIndex: Int, index: Int, name: String, ticker: String, imageUrl: String)
+    func addProduct(companyIndex: Int, name: String, imageUrl: String, productUrl: String)
+    func editProduct(companyIndex: Int, index: Int, name: String, imageUrl: String, productUrl: String)
     func deleteProduct(companyIndex: Int, index: Int)
     func getProducts(companyIndex: Int)-> [ProductMO]
 

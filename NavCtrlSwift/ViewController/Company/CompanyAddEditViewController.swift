@@ -38,11 +38,13 @@ class CompanyAddEditViewController: UIViewController {
     @objc func saveData() {
         
         guard
-        let name = txtCompanyName.text,
-        let ticker = txtTicker.text,
-        let imageUrl = txtImageUrl.text
+        let name = txtCompanyName.text, name.count > 0,
+        let ticker = txtTicker.text, ticker.count > 0,
+        let imageUrl = txtImageUrl.text, imageUrl.count > 0
         else {
-            
+            let alert = UIAlertController(title: "Alert", message: "Please fill all fields", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             return
         }
         let dao = DAOCoreData.share as DAO

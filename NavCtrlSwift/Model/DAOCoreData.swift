@@ -94,11 +94,24 @@ class DAOCoreData: NSObject, DAO {
     
     // MARK: - Product Methods
     
-    func addProduct(companyIndex: Int, name: String, ticker: String, imageUrl: String) {
+    func addProduct(companyIndex: Int, name: String, imageUrl: String, productUrl: String) {
+        
+        let company = companies[companyIndex]
+        guard let context = managedContext else {
+            return
+        }
+        
+        let newProduct = ProductMO(context: context)
+        newProduct.name = name
+        newProduct.imageUrl = imageUrl
+        newProduct.productUrl = productUrl
+        newProduct.order = Int16 ( company.products?.count ?? 0 )
+        newProduct.company = company
         
     }
     
-    func editProduct(companyIndex: Int, index: Int, name: String, ticker: String, imageUrl: String) {
+    
+    func editProduct(companyIndex: Int, index: Int, name: String, imageUrl: String, productUrl: String) {
         
     }
     

@@ -23,11 +23,12 @@ extension UIImageView {
             return
         }
         
-        DispatchQueue.global().async { [weak self] in
+        DispatchQueue.global().async {
             if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {
+                    NSLog("Image Loaded %@", urlString)
                     DispatchQueue.main.async {
-                        self?.image = image.stretchableImage(withLeftCapWidth: (self?.image?.leftCapWidth)!, topCapHeight: (self?.image?.topCapHeight)!)
+                        self.image = image
                         UIImageView.imageCache.setObject(image, forKey: urlString as NSString)
                     }
                 }

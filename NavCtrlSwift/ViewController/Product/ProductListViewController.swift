@@ -39,8 +39,20 @@ class ProductListViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: reuseIdentifier)
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     @objc func openAdd() {
+        let productAddEditViewController = ProductAddEditViewController()
+        productAddEditViewController.companyIndex = companyIndex
+        self.navigationController?.pushViewController(productAddEditViewController, animated: true)
+    }
+    
+    @IBAction func addClicked(_ sender: Any) {
+        openAdd()
     }
 
 }
@@ -49,25 +61,26 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        
-        if let count = company?.products?.count, count > 0  {
+        let count = dao.getProducts(companyIndex: companyIndex).count
+        if count > 0  {
             emptyView.removeFromSuperview()
-            return count
         }
         else {
             emptyView.frame = tableView.frame
             self.view.addSubview(emptyView)
-            return 0
         }
-        
+        return count
      }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:CustomViewCell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as! CustomViewCell
         
+        let product = dao.getProducts(companyIndex: companyIndex)[indexPath.row]
     
-        
+        cell.lblHeading.text = product.name
+        cell.imgViewLogo.load(urlString: product.imageUrl)
+        cell.lblDetail.text = product.productUrl
         return cell
     }
     
@@ -75,6 +88,16 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
         return 60
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let product = dao.getProducts(companyIndex: companyIndex)[indexPath.row]
+        
+        let productWebViewController = ProductWebViewController()
+        productWebViewController.productUrlString = product.productUrl
+        self.navigationController?.pushViewController(productWebViewController, animated: true)
+
+    }
     
     
     

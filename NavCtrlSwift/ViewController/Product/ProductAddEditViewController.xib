@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductAddEditViewController" customModule="NavCtrlSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="txtImageUrl" destination="ite-L9-fd1" id="bpy-hZ-BpX"/>
+                <outlet property="txtProductName" destination="BJR-HC-YWr" id="fzN-yv-T2n"/>
+                <outlet property="txtProductUrl" destination="Hms-mi-cWh" id="t4C-Ys-aGf"/>
+                <outlet property="view" destination="iN0-l3-epB" id="uPm-Oh-Zgk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Qkd-in-Ldk">
+                    <rect key="frame" x="50" y="222.5" width="275" height="122"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJR-HC-YWr">
+                            <rect key="frame" x="0.0" y="0.0" width="275" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://www.nolimitlogic.com/img/samples/business-logos/013.jpg" borderStyle="roundedRect" placeholder="Product Image Url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ite-L9-fd1">
+                            <rect key="frame" x="0.0" y="46" width="275" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://www.apple.com/ipad/" borderStyle="roundedRect" placeholder="Product Url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hms-mi-cWh">
+                            <rect key="frame" x="0.0" y="92" width="275" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Qkd-in-Ldk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="RG9-Lt-eEz"/>
+                <constraint firstItem="Qkd-in-Ldk" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-50" id="Rm5-yD-Fv1"/>
+                <constraint firstAttribute="trailing" secondItem="Qkd-in-Ldk" secondAttribute="trailing" constant="50" id="WRb-cL-8wj"/>
+                <constraint firstItem="Qkd-in-Ldk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="iAr-51-Uj1"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
